@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import FilterPrintType from './FilterPrintType';
 
-describe('<App />', () => {
+describe('<FilterPrintType />', () => {
   it('renders wihtout crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<App />, div)
+    ReactDOM.render(<FilterPrintType />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 });

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import SearchInput from './SearchInput';
 
-describe('<App />', () => {
+describe('<SearchInput />', () => {
   it('renders wihtout crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<App />, div)
+    ReactDOM.render(<SearchInput />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 });

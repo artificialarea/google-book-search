@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import BookList from './BookList';
 
-describe('<App />', () => {
+describe('<BookList />', () => {
   it('renders wihtout crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<App />, div)
+    ReactDOM.render(<BookList />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 });

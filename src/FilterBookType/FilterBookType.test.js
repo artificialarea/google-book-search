@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import FilterBookType from './FilterBookType';
 
-describe('<App />', () => {
+describe('<FilterBookType />', () => {
   it('renders wihtout crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<App />, div)
+    ReactDOM.render(<FilterBookType />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 });
