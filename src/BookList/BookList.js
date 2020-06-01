@@ -4,10 +4,18 @@ import BookItem from '../BookItem/BookItem';
 
 export default class BookList extends React.Component {
   render() {
+    const { items } = this.props;
+    const item = items.map((item, index) => 
+      <BookItem 
+        {...item} // spread operator passes all the item properties down
+        key={index}
+      />
+    );
+
     return (
-      <div className="BookList">
-        <BookItem items={this.props.items}/>
-      </div>
+      <ul className="BookList">
+        {item}
+      </ul>
     );
   }
 }

@@ -35,7 +35,7 @@ export default class SearchBar extends React.Component {
   }
 
   formatQueryParams(params) {
-    // remove object properties if empty (default parameters)
+    // remove object properties if empty (ergo, default parameters)
     if (params['filter'] === '') {
       delete params['filter']
     } 
@@ -46,7 +46,7 @@ export default class SearchBar extends React.Component {
     const queryItems = Object.keys(params).map(key => {
       return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
     });
-    console.log(queryItems)
+    // console.log(queryItems)
     return queryItems.join('&');
   }
 
@@ -65,7 +65,7 @@ export default class SearchBar extends React.Component {
       q: this.state.q,
       printType: this.state.printType,
       filter: this.state.filter,
-      key: apiKey, // may pass within headers later...
+      key: apiKey, // may pass within headers fetch option param later...
     };
 
     const queryString = this.formatQueryParams(params);
@@ -80,7 +80,10 @@ export default class SearchBar extends React.Component {
         }
         return response.json();
       })
-      .then(data => console.log(data))
+      .then(data => {
+        // console.log(data)
+        this.props.handleData(data);
+      })
       .catch(err => {
         console.log(err.message);
         this.setState({
@@ -98,21 +101,15 @@ export default class SearchBar extends React.Component {
         </header>
         
         <SearchInput 
-          // handleQuery={this.props.handleQuery}
-          // query={this.state.q}
           handleSubmit={event => this.fetchBooks(event)}
           handleQuery={query => this.setQuery(query)}
         />
 
         <div className="filters">
           <FilterPrintType 
-            // handlePrintType={this.props.handlePrintType}
-            // printType={this.state.printType}
             handlePrintType={type => this.setPrintType(type)}
           />
           <FilterBookType 
-            // handleBookType={this.props.handleBookType}
-            // bookType={this.state.filter}
             handleBookType={type => this.setBookType(type)}
           />
         </div>

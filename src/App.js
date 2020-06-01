@@ -9,26 +9,21 @@ export default class App extends React.Component {
     super(props)
     this.state = {
       items: [], 
-      // moving stateful paramaters to SearchBar
-      // q: '',
-      // printType: '',
-      // filter: '', 
     }
   }
 
-  
+  updateState(data) {
+    this.setState({
+      items: data['items']
+    })
+  }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <div className="App">
-
-        <SearchBar 
-
-        />
-
+        <SearchBar handleData={data => this.updateState(data)}/>
         <ResultsContainer items={this.state.items} />
-        
       </div>
     );
   }
