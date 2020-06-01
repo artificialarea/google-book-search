@@ -3,6 +3,11 @@ import './BookList.css';
 import BookItem from '../BookItem/BookItem';
 
 export default class BookList extends React.Component {
+
+  static defaultProps = {
+    items: [],
+  }
+  
   render() {
     const { items } = this.props;
     const item = items.map((item, index) => 

@@ -1,0 +1,43 @@
+a {
+  display: inline-block;
+  border: 3px solid black;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}
+
+.BookItem {
+  display: flex;
+}
+
+.title {
+  margin-top: 5px;
+}
+
+li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  padding-bottom: 60px;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8rem;
+}
+
+img {
+  /* float:left; */
+  margin-right: 40px;
+}

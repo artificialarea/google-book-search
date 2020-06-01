@@ -53,7 +53,8 @@ export default class SearchBar extends React.Component {
   fetchBooks(event) {
     event.preventDefault();
     const baseURL = 'https://www.googleapis.com/books/v1/volumes';
-    const apiKey = ''; /* DON'T GIT ADD/COMMIT */
+    /* DON'T GIT COMMIT API KEY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    const apiKey = ''; 
 
     // const options = {
     //   headers: new Headers({
@@ -65,19 +66,18 @@ export default class SearchBar extends React.Component {
       q: this.state.q,
       printType: this.state.printType,
       filter: this.state.filter,
-      key: apiKey, // may pass within headers fetch option param later...
+      key: apiKey, // may pass within headers fetch options param later...
     };
 
     const queryString = this.formatQueryParams(params);
     const url = baseURL + '?' + queryString;
     console.log(url);
 
-    // fetch(url, options)
     fetch(url)
       .then(response => {
         if (!response.ok) {
-          throw new Error()
-        }
+          throw new Error('Problem with search. Please try again.')
+        } 
         return response.json();
       })
       .then(data => {
@@ -85,10 +85,11 @@ export default class SearchBar extends React.Component {
         this.props.handleData(data);
       })
       .catch(err => {
-        console.log(err.message);
-        this.setState({
-          error: err.message,
-        })
+        // console.log(err.message);
+        // this.setState({
+        //   error: err.message,
+        // })
+        this.props.handleError(err.message)
       })
   }
 

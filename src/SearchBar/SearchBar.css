@@ -17,3 +17,7 @@ header {
 label {
   margin-right: 5px;
 }
+
+.SearchBar {
+  text-align: center;
+}
