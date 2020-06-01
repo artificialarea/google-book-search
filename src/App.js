@@ -8,35 +8,18 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      q: '',
-      printType: '',
-      filter: '', // aka bookType
       items: [], 
+      // moving stateful paramaters to SearchBar
+      // q: '',
+      // printType: '',
+      // filter: '', 
     }
-  }
-
-  setQuery(q) {
-    this.setState({
-      q
-    })
-  }
-
-  setPrintType(printType) {
-    this.setState({
-      printType
-    })
-  }
-
-  setBookType(filter) {
-    this.setState({
-      filter
-    })
   }
 
   formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => {
       if (params[key] !== '') {
-        return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+        return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
       }     
     });
     return queryItems.join('&');
@@ -68,16 +51,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="App">
 
         <SearchBar 
-          printType={this.state.printType}
-          bookType={this.state.filter}
-          handleQuery={query => this.setQuery(query)}
-          handlePrintType={type => this.setPrintType(type)}
-          handleBookType={type => this.setBookType(type)}
+
         />
 
         <ResultsContainer items={this.state.items} />
