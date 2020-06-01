@@ -1,0 +1,19 @@
+.filters {
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 25px;
+  font-weight: bold;
+}
+
+label {
+  margin-right: 5px;
+}
