@@ -11,8 +11,9 @@ export default class SearchInput extends React.Component {
             type="text" 
             name="search" 
             placeholder="type here..."
-            // value={this.state.q}
+            value={this.props.q}
             required
+            onChange={(event => this.props.handleQuery(event.target.value))}
           />
           <button type="submit">Search</button>
         </form>

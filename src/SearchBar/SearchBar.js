@@ -13,7 +13,7 @@ export default class SearchBar extends React.Component {
           <h1>Google Book Search</h1>
         </header>
         
-        <SearchInput />
+        <SearchInput handleQuery={this.props.handleQuery}/>
 
         <div className="filters">
           <FilterPrintType handlePrintType={this.props.handlePrintType}/>
